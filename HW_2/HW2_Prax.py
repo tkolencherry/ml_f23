@@ -1,28 +1,35 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
+# In[1]:
 
 
 import pandas as pd 
 import numpy as np
 from sklearn.model_selection import train_test_split
 from random import seed
+import requests
+import io
+
+
+# In[2]:
+
+
+#df = pd.read_csv ("C:/Users/teris/ml_f23/HW_2/hotel_booking.csv")
+
+url = "https://raw.githubusercontent.com/tkolencherry/ml_f23/main/HW_2/hotel_booking.csv"
+file = requests.get(url).content
+df = pd.read_csv(io.StringIO(file.decode('utf-8')))
+df.head()
 
 
 # In[3]:
 
 
-df = pd.read_csv ("C:/Users/teris/ml_f23/HW_2/hotel_booking.csv")
-
-
-# In[21]:
-
-
 df.corr()['is_canceled']
 
 
-# In[17]:
+# In[4]:
 
 
 class NN_scratch(object): 
@@ -177,7 +184,7 @@ class NN_scratch(object):
     
 
 
-# In[18]:
+# In[5]:
 
 
 nn = NN_scratch("tanh",df)

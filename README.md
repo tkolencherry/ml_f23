@@ -5,3 +5,5 @@ Fall '23 Machine Learning Class
 >> I used the Jupyter Notebook extension 
 >> Change Python Interpreter to 3.9.13 ('base':conda) from Recommended interpreter 
 >> Click "Run Below" button, located above "# In[1]:" 
+
+I used a 80/20 train-test split. 
